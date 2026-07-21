@@ -213,7 +213,7 @@ export default async function CheckoutPage({
               <button
                 type="submit"
                 form="checkout-form"
-                className="mt-6 w-full rounded-md bg-[#FBC6D8] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d2d47]"
+                className="mt-6 w-full rounded-md bg-[#FBC6D8] px-6 py-3.5 text-sm font-semibold text-[#201a1c] transition-colors hover:bg-[#1d2d47]"
               >
                 تایید و پرداخت
               </button>
