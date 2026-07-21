@@ -293,7 +293,7 @@ export default function Header({ isScrolled = false }: { isScrolled?: boolean })
           {/* Mobile Logo */}
           <div className="mb-6 flex items-center gap-3 border-b border-slate-100 pb-6">
             <Image alt="" src="/logo.jpg" className="h-11 w-11 rounded-full" />
-            <span className="hidden text-lg font-bold tracking-tight text-[#0f0c0d] sm:block">
+            <span className="text-lg font-bold tracking-tight text-[#0f0c0d] sm:block">
               سویل اکسسوی
             </span>
           </div>
