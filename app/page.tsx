@@ -362,7 +362,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-right">
             <div>
-              <p className="text-lg font-bold text-[var(--color-footer-text)]">نام برند</p>
+              <p className="text-lg font-bold text-[var(--color-footer-text)]">اکسسوری سویل</p>
               <p className="mt-1 text-sm text-[var(--color-footer-text)]/80">
                 ارسال به سراسر ایران — پاسخگویی ۷ روز هفته
               </p>
@@ -380,7 +380,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 border-t border-[var(--color-footer-text)]/10 pt-6 text-center text-xs text-[var(--color-footer-text)]/60">
-            © ۲۰۲۶ نام برند — تمامی حقوق محفوظ است
+            © ۲۰۲۶ اکسسوری سویل — تمامی حقوق محفوظ است
           </div>
         </div>
       </motion.footer>
