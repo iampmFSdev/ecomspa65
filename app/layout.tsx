@@ -4,6 +4,7 @@ import { Inter, Vazirmatn } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { ThemeProvider } from "./page"
 
 const inter = Vazirmatn({ subsets: ["arabic"] })
 
@@ -21,11 +22,14 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className={inter.className}>
+        <ThemeProvider initialTheme="pink">
+          
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
         </div>
+        </ThemeProvider>
       </body>
     </html>
   )
