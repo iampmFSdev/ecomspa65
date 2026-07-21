@@ -199,6 +199,7 @@
 
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -224,11 +225,12 @@ export default function Header({ isScrolled = false }: { isScrolled?: boolean })
           <div className="flex h-16 items-center justify-between lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#FBC6D8]">
-                <span className="text-lg font-bold text-white">ن</span>
-              </div>
-              <span className="hidden text-lg font-bold tracking-tight text-[#FBC6D8] sm:block">
-                نام برند
+              {/* <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#FBC6D8]"> */}
+                {/* <span className="text-lg font-bold text-white">ن</span> */}
+              {/* </div> */}
+              <Image alt="" src="/logo.jpg" className="h-11 w-11 rounded-full"/>
+              <span className="hidden text-lg font-bold tracking-tight text-[#0f0c0d] sm:block">
+                سویل اکسسوی
               </span>
             </Link>
 
