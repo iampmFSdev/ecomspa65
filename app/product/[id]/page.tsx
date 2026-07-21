@@ -305,7 +305,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               </h1>
 
               {/* Price */}
-              <p className="mt-2 text-2xl font-bold text-[#FBC6D8]">
+              <p className="mt-2 text-2xl font-bold text-[#181314]">
                 {product.price.toLocaleString()} تومان
               </p>
 
