@@ -224,10 +224,10 @@ export default function Header({ isScrolled = false }: { isScrolled?: boolean })
           <div className="flex h-16 items-center justify-between lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#152238]">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#FBC6D8]">
                 <span className="text-lg font-bold text-white">ن</span>
               </div>
-              <span className="hidden text-lg font-bold tracking-tight text-[#152238] sm:block">
+              <span className="hidden text-lg font-bold tracking-tight text-[#FBC6D8] sm:block">
                 نام برند
               </span>
             </Link>
@@ -239,7 +239,7 @@ export default function Header({ isScrolled = false }: { isScrolled?: boolean })
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="group relative rounded-md px-4 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-slate-50 hover:text-[#152238]"
+                      className="group relative rounded-md px-4 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-slate-50 hover:text-[#FBC6D8]"
                     >
                       {link.label}
                       <span className="absolute inset-x-4 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-[#C9A25D] transition-transform duration-200 group-hover:scale-x-100" />
@@ -252,7 +252,7 @@ export default function Header({ isScrolled = false }: { isScrolled?: boolean })
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg text-[#152238] transition-colors duration-200 hover:bg-slate-100 md:hidden"
+              className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg text-[#FBC6D8] transition-colors duration-200 hover:bg-slate-100 md:hidden"
               aria-label={isMenuOpen ? "بستن منو" : "باز کردن منو"}
               aria-expanded={isMenuOpen}
             >
@@ -290,10 +290,10 @@ export default function Header({ isScrolled = false }: { isScrolled?: boolean })
         <div className="flex h-full flex-col pt-20 px-6">
           {/* Mobile Logo */}
           <div className="mb-6 flex items-center gap-3 border-b border-slate-100 pb-6">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#152238]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#FBC6D8]">
               <span className="text-base font-bold text-white">ن</span>
             </div>
-            <span className="text-lg font-bold tracking-tight text-[#152238]">
+            <span className="text-lg font-bold tracking-tight text-[#FBC6D8]">
               نام برند
             </span>
           </div>
@@ -306,7 +306,7 @@ export default function Header({ isScrolled = false }: { isScrolled?: boolean })
                   <Link
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center gap-3 rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-50 hover:text-[#152238]"
+                    className="flex items-center gap-3 rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-50 hover:text-[#FBC6D8]"
                   >
                     {link.label}
                   </Link>

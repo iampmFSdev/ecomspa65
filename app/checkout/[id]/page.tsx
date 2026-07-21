@@ -137,7 +137,7 @@ export default async function CheckoutPage({
             {/* Personal Information */}
             <div className="rounded-lg border border-slate-200 bg-white p-6 sm:p-8">
               <h2 className="mb-6 flex items-center gap-2 text-lg font-semibold text-slate-800">
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#152238] text-sm font-bold text-white">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#FBC6D8] text-sm font-bold text-white">
                   ۱
                 </span>
                 اطلاعات شخصی
@@ -148,7 +148,7 @@ export default async function CheckoutPage({
             {/* Payment Methods */}
             <div className="rounded-lg border border-slate-200 bg-white p-6 sm:p-8">
               <h2 className="mb-6 flex items-center gap-2 text-lg font-semibold text-slate-800">
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#152238] text-sm font-bold text-white">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#FBC6D8] text-sm font-bold text-white">
                   ۲
                 </span>
                 روش پرداخت
@@ -162,7 +162,7 @@ export default async function CheckoutPage({
                 ].map((method, idx) => (
                   <div
                     key={idx}
-                    className="flex cursor-pointer flex-col items-center gap-2 rounded-md border border-slate-200 p-4 text-center transition-colors hover:border-[#152238]/30 hover:bg-slate-50"
+                    className="flex cursor-pointer flex-col items-center gap-2 rounded-md border border-slate-200 p-4 text-center transition-colors hover:border-[#FBC6D8]/30 hover:bg-slate-50"
                   >
                     <method.icon className="h-5 w-5 text-slate-600" strokeWidth={1.75} />
                     <span className="text-sm font-medium text-slate-700">{method.label}</span>
@@ -205,7 +205,7 @@ export default async function CheckoutPage({
                 </div>
                 <div className="mt-3 flex justify-between border-t border-slate-200 pt-3 text-base font-bold">
                   <span>جمع کل</span>
-                  <span className="text-[#152238]">{product.price.toLocaleString()} تومان</span>
+                  <span className="text-[#FBC6D8]">{product.price.toLocaleString()} تومان</span>
                 </div>
               </div>
 
@@ -213,7 +213,7 @@ export default async function CheckoutPage({
               <button
                 type="submit"
                 form="checkout-form"
-                className="mt-6 w-full rounded-md bg-[#152238] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d2d47]"
+                className="mt-6 w-full rounded-md bg-[#FBC6D8] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d2d47]"
               >
                 تایید و پرداخت
               </button>

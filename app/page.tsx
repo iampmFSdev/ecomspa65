@@ -55,7 +55,7 @@ export default function Home() {
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
-        className="relative bg-[#152238] px-4 py-16 sm:py-20 lg:py-24"
+        className="relative bg-[#FBC6D8] px-4 py-16 sm:py-20 lg:py-24"
       >
         <div className="relative mx-auto max-w-4xl text-center">
           <motion.h1
@@ -81,7 +81,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.4 }}
-            className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#C9A25D] px-6 py-3 text-sm font-semibold text-[#152238] transition-colors hover:bg-[#d4b374]"
+            className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#C9A25D] px-6 py-3 text-sm font-semibold text-[#FBC6D8] transition-colors hover:bg-[#d4b374]"
           >
             مشاهده محصولات
             <ArrowLeft className="h-4 w-4" />
@@ -110,7 +110,7 @@ export default function Home() {
               transition={{ delay: 0.5 + index * 0.1 }}
               className="flex items-center justify-center gap-2.5 text-slate-600"
             >
-              <item.icon className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+              <item.icon className="h-5 w-5 text-[#FBC6D8]" strokeWidth={1.75} />
               <span className="text-sm">{item.text}</span>
             </motion.div>
           ))}
@@ -134,7 +134,7 @@ export default function Home() {
                 placeholder="جستجوی محصولات ..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-md border-0 bg-transparent py-3 pr-11 pl-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#152238]/15"
+                className="w-full rounded-md border-0 bg-transparent py-3 pr-11 pl-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FBC6D8]/15"
                 dir="rtl"
               />
               {searchQuery && (
@@ -179,7 +179,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setSearchQuery("")}
-              className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#152238] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+              className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#FBC6D8] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
             >
               نمایش همه محصولات
               <ArrowLeft className="h-4 w-4" />
@@ -221,14 +221,14 @@ export default function Home() {
                   <h3 className="text-sm font-medium text-slate-800 line-clamp-1">
                     {product.name}
                   </h3>
-                  <p className="mt-1.5 text-base font-semibold text-[#152238]">
+                  <p className="mt-1.5 text-base font-semibold text-[#FBC6D8]">
                     {product.price.toLocaleString()} تومان
                   </p>
 
                   <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
                     <Link
                       href={`/product/${product.id}`}
-                      className="inline-flex items-center text-sm text-slate-600 transition-colors hover:text-[#152238]"
+                      className="inline-flex items-center text-sm text-slate-600 transition-colors hover:text-[#FBC6D8]"
                     >
                       مشاهده جزئیات
                       <ArrowLeft className="mr-1 h-4 w-4" />
@@ -240,7 +240,7 @@ export default function Home() {
                     >
                       <Link
                         href={`/product/${product.id}`}
-                        className="rounded-md bg-[#152238] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+                        className="rounded-md bg-[#FBC6D8] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
                       >
                         خرید
                       </Link>
@@ -259,7 +259,7 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-16 border-t border-slate-200 bg-[#152238]"
+        className="mt-16 border-t border-slate-200 bg-[#FBC6D8]"
       >
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-right">
@@ -291,7 +291,7 @@ export default function Home() {
   // return (
   //   <main className="min-h-screen bg-[#FAFAF9]">
   //     {/* Hero Section */}
-  //     <section className="relative bg-[#152238] px-4 py-16 sm:py-20 lg:py-24">
+  //     <section className="relative bg-[#FBC6D8] px-4 py-16 sm:py-20 lg:py-24">
   //       <div className="relative mx-auto max-w-4xl text-center">
   //         <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
   //           نام برند
@@ -301,7 +301,7 @@ export default function Home() {
   //         </p>
   //         <a
   //           href="#products"
-  //           className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#C9A25D] px-6 py-3 text-sm font-semibold text-[#152238] transition-colors hover:bg-[#d4b374]"
+  //           className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#C9A25D] px-6 py-3 text-sm font-semibold text-[#FBC6D8] transition-colors hover:bg-[#d4b374]"
   //         >
   //           مشاهده محصولات
   //           <ArrowLeft className="h-4 w-4" />
@@ -313,15 +313,15 @@ export default function Home() {
   //     <div className="border-b border-slate-200 bg-white">
   //       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-3">
   //         <div className="flex items-center justify-center gap-2.5 text-slate-600">
-  //           <Truck className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+  //           <Truck className="h-5 w-5 text-[#FBC6D8]" strokeWidth={1.75} />
   //           <span className="text-sm">ارسال سریع به سراسر ایران</span>
   //         </div>
   //         <div className="flex items-center justify-center gap-2.5 text-slate-600">
-  //           <ShieldCheck className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+  //           <ShieldCheck className="h-5 w-5 text-[#FBC6D8]" strokeWidth={1.75} />
   //           <span className="text-sm">پرداخت امن</span>
   //         </div>
   //         <div className="flex items-center justify-center gap-2.5 text-slate-600">
-  //           <RotateCcw className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+  //           <RotateCcw className="h-5 w-5 text-[#FBC6D8]" strokeWidth={1.75} />
   //           <span className="text-sm">ضمانت بازگشت کالا</span>
   //         </div>
   //       </div>
@@ -339,7 +339,7 @@ export default function Home() {
   //               placeholder="جستجوی محصولات ..."
   //               value={searchQuery}
   //               onChange={(e) => setSearchQuery(e.target.value)}
-  //               className="w-full rounded-md border-0 bg-transparent py-3 pr-11 pl-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#152238]/15"
+  //               className="w-full rounded-md border-0 bg-transparent py-3 pr-11 pl-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FBC6D8]/15"
   //               dir="rtl"
   //             />
   //             {searchQuery && (
@@ -372,7 +372,7 @@ export default function Home() {
   //           </p>
   //           <button
   //             onClick={() => setSearchQuery("")}
-  //             className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#152238] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+  //             className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#FBC6D8] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
   //           >
   //             نمایش همه محصولات
   //             <ArrowLeft className="h-4 w-4" />
@@ -406,14 +406,14 @@ export default function Home() {
   //                 <h3 className="text-sm font-medium text-slate-800 line-clamp-1">
   //                   {product.name}
   //                 </h3>
-  //                 <p className="mt-1.5 text-base font-semibold text-[#152238]">
+  //                 <p className="mt-1.5 text-base font-semibold text-[#FBC6D8]">
   //                   {product.price.toLocaleString()} تومان
   //                 </p>
 
   //                 <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
   //                   <Link
   //                     href={`/product/${product.id}`}
-  //                     className="inline-flex items-center text-sm text-slate-600 transition-colors hover:text-[#152238]"
+  //                     className="inline-flex items-center text-sm text-slate-600 transition-colors hover:text-[#FBC6D8]"
   //                   >
   //                     مشاهده جزئیات
   //                     <ArrowLeft className="mr-1 h-4 w-4" />
@@ -421,7 +421,7 @@ export default function Home() {
 
   //                   <Link
   //                     href={`/product/${product.id}`}
-  //                     className="rounded-md bg-[#152238] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+  //                     className="rounded-md bg-[#FBC6D8] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
   //                   >
   //                     خرید
   //                   </Link>
@@ -434,7 +434,7 @@ export default function Home() {
   //     </div>
 
   //     {/* Footer */}
-  //     <footer className="mt-16 border-t border-slate-200 bg-[#152238]">
+  //     <footer className="mt-16 border-t border-slate-200 bg-[#FBC6D8]">
   //       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
   //         <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-right">
   //           <div>
@@ -494,7 +494,7 @@ export default function Home() {
 //   return (
 //     <main className="min-h-screen bg-[#FAFAF9]">
 //       {/* Hero Section */}
-//       <section className="relative bg-[#152238] px-4 py-16 sm:py-20 lg:py-24">
+//       <section className="relative bg-[#FBC6D8] px-4 py-16 sm:py-20 lg:py-24">
 //         <div className="relative mx-auto max-w-4xl text-center">
 //           {/* <span className="inline-block border-b border-[#C9A25D]/50 pb-1 text-xs font-medium uppercase tracking-[0.2em] text-[#C9A25D]">
 //             مجموعه جدید
@@ -522,7 +522,7 @@ export default function Home() {
 //                 placeholder="جستجوی محصولات ..."
 //                 value={searchQuery}
 //                 onChange={(e) => setSearchQuery(e.target.value)}
-//                 className="w-full rounded-md border-0 bg-transparent py-3 pr-11 pl-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#152238]/15"
+//                 className="w-full rounded-md border-0 bg-transparent py-3 pr-11 pl-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FBC6D8]/15"
 //                 dir="rtl"
 //               />
 //               {searchQuery && (
@@ -555,7 +555,7 @@ export default function Home() {
 //             </p>
 //             <button
 //               onClick={() => setSearchQuery("")}
-//               className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#152238] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+//               className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#FBC6D8] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
 //             >
 //               نمایش همه محصولات
 //               <ArrowLeft className="h-4 w-4" />
@@ -589,14 +589,14 @@ export default function Home() {
 //                   <h3 className="text-sm font-medium text-slate-800 line-clamp-1">
 //                     {product.name}
 //                   </h3>
-//                   <p className="mt-1.5 text-base font-semibold text-[#152238]">
+//                   <p className="mt-1.5 text-base font-semibold text-[#FBC6D8]">
 //                     {product.price.toLocaleString()} تومان
 //                   </p>
 
 //                   <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
 //                     <Link
 //                       href={`/product/${product.id}`}
-//                       className="inline-flex items-center text-sm text-slate-600 transition-colors hover:text-[#152238]"
+//                       className="inline-flex items-center text-sm text-slate-600 transition-colors hover:text-[#FBC6D8]"
 //                     >
 //                       مشاهده جزئیات
 //                       <ArrowLeft className="mr-1 h-4 w-4" />
@@ -604,7 +604,7 @@ export default function Home() {
 
 //                     <Link
 //                       href={`/product/${product.id}`}
-//                       className="rounded-md bg-[#152238] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+//                       className="rounded-md bg-[#FBC6D8] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
 //                     >
 //                       خرید
 //                     </Link>

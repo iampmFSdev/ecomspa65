@@ -268,7 +268,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
         {/* Back link */}
         <Link
           href="/"
-          className="mb-6 inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-[#152238]"
+          className="mb-6 inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-[#FBC6D8]"
         >
           <ArrowLeft className="h-4 w-4 rotate-180" />
           بازگشت به فروشگاه
@@ -305,7 +305,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               </h1>
 
               {/* Price */}
-              <p className="mt-2 text-2xl font-bold text-[#152238]">
+              <p className="mt-2 text-2xl font-bold text-[#FBC6D8]">
                 {product.price.toLocaleString()} تومان
               </p>
 
@@ -320,7 +320,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               {/* Buy Button */}
               <Link
                 href={`/checkout/${product.id}`}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-[#152238] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d2d47]"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-[#FBC6D8] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d2d47]"
               >
                 خرید محصول
               </Link>
@@ -328,15 +328,15 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               {/* Features */}
               <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <div className="flex items-center gap-2.5 rounded-md border border-slate-200 px-3 py-2.5">
-                  <CheckCircle className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+                  <CheckCircle className="h-5 w-5 text-[#FBC6D8]" strokeWidth={1.75} />
                   <span className="text-sm font-medium text-slate-700">ضمانت اصالت</span>
                 </div>
                 <div className="flex items-center gap-2.5 rounded-md border border-slate-200 px-3 py-2.5">
-                  <Truck className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+                  <Truck className="h-5 w-5 text-[#FBC6D8]" strokeWidth={1.75} />
                   <span className="text-sm font-medium text-slate-700">ارسال سریع</span>
                 </div>
                 <div className="flex items-center gap-2.5 rounded-md border border-slate-200 px-3 py-2.5">
-                  <Package className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+                  <Package className="h-5 w-5 text-[#FBC6D8]" strokeWidth={1.75} />
                   <span className="text-sm font-medium text-slate-700">بسته‌بندی ویژه</span>
                 </div>
               </div>
