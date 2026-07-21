@@ -205,7 +205,7 @@ export default async function CheckoutPage({
                 </div>
                 <div className="mt-3 flex justify-between border-t border-slate-200 pt-3 text-base font-bold">
                   <span>جمع کل</span>
-                  <span className="text-[#FBC6D8]">{product.price.toLocaleString()} تومان</span>
+                  <span className="text-[#382c30]">{product.price.toLocaleString()} تومان</span>
                 </div>
               </div>
 
