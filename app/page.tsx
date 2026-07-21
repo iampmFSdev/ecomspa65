@@ -31,7 +31,7 @@ export const themes = {
 
     "--color-price": "#FBC6D8",
     "--color-footer-bg": "#FBC6D8",
-    "--color-footer-text": "#FFFFFF",
+    "--color-footer-text": "#222",
     "--color-icon": "#FBC6D8",
   },
 
