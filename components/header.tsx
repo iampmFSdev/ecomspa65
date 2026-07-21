@@ -292,11 +292,9 @@ export default function Header({ isScrolled = false }: { isScrolled?: boolean })
         <div className="flex h-full flex-col pt-20 px-6">
           {/* Mobile Logo */}
           <div className="mb-6 flex items-center gap-3 border-b border-slate-100 pb-6">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#FBC6D8]">
-              <span className="text-base font-bold text-white">ن</span>
-            </div>
-            <span className="text-lg font-bold tracking-tight text-[#FBC6D8]">
-              نام برند
+            <Image alt="" src="/logo.jpg" className="h-11 w-11 rounded-full" />
+            <span className="hidden text-lg font-bold tracking-tight text-[#0f0c0d] sm:block">
+              سویل اکسسوی
             </span>
           </div>
 
