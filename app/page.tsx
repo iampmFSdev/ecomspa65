@@ -2,9 +2,35 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import {motion} from 'framer-motion'
 import { products } from "@/lib/data";
 import { ArrowLeft, Search, SearchX, Truck, ShieldCheck, RotateCcw } from "lucide-react";
 import { useState, useMemo } from "react";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,47 +50,82 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#FAFAF9]">
-      {/* Hero Section */}
-      <section className="relative bg-[#152238] px-4 py-16 sm:py-20 lg:py-24">
+      {/* Hero Section with entrance animation */}
+      <motion.section
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+        className="relative bg-[#152238] px-4 py-16 sm:py-20 lg:py-24"
+      >
         <div className="relative mx-auto max-w-4xl text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl"
+          >
             نام برند
-          </h1>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg"
+          >
             محصولات منتخب، کیفیت تضمین‌شده و ارسال سریع به سراسر ایران.
-          </p>
-          <a
+          </motion.p>
+          <motion.a
             href="#products"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.4 }}
             className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#C9A25D] px-6 py-3 text-sm font-semibold text-[#152238] transition-colors hover:bg-[#d4b374]"
           >
             مشاهده محصولات
             <ArrowLeft className="h-4 w-4" />
-          </a>
+          </motion.a>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Trust Bar */}
-      <div className="border-b border-slate-200 bg-white">
+      {/* Trust Bar – entrance with slight delay */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+        transition={{ delay: 0.3 }}
+        className="border-b border-slate-200 bg-white"
+      >
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-3">
-          <div className="flex items-center justify-center gap-2.5 text-slate-600">
-            <Truck className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
-            <span className="text-sm">ارسال سریع به سراسر ایران</span>
-          </div>
-          <div className="flex items-center justify-center gap-2.5 text-slate-600">
-            <ShieldCheck className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
-            <span className="text-sm">پرداخت امن</span>
-          </div>
-          <div className="flex items-center justify-center gap-2.5 text-slate-600">
-            <RotateCcw className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
-            <span className="text-sm">ضمانت بازگشت کالا</span>
-          </div>
+          {[
+            { icon: Truck, text: "ارسال سریع به سراسر ایران" },
+            { icon: ShieldCheck, text: "پرداخت امن" },
+            { icon: RotateCcw, text: "ضمانت بازگشت کالا" },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 + index * 0.1 }}
+              className="flex items-center justify-center gap-2.5 text-slate-600"
+            >
+              <item.icon className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+              <span className="text-sm">{item.text}</span>
+            </motion.div>
+          ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Search & Products */}
       <div id="products" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        {/* Search Bar */}
-        <div className="mx-auto max-w-2xl relative z-10">
+        {/* Search Bar with entrance */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="mx-auto max-w-2xl relative z-10"
+        >
           <div className="rounded-lg bg-white p-1.5 shadow-md ring-1 ring-slate-200">
             <div className="relative">
               <Search className="absolute right-3.5 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-slate-400" />
@@ -77,26 +138,36 @@ export default function Home() {
                 dir="rtl"
               />
               {searchQuery && (
-                <button
+                <motion.button
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
                   onClick={() => setSearchQuery("")}
                   className="absolute left-3.5 top-1/2 -translate-y-1/2 rounded p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600"
                   aria-label="پاک کردن جستجو"
                 >
                   ✕
-                </button>
+                </motion.button>
               )}
             </div>
           </div>
           {searchQuery && (
-            <p className="mt-2.5 text-center text-sm text-slate-500">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mt-2.5 text-center text-sm text-slate-500"
+            >
               {displayProducts.length} نتیجه برای «{searchQuery}»
-            </p>
+            </motion.p>
           )}
-        </div>
+        </motion.div>
 
         {/* Product Grid */}
         {displayProducts.length === 0 ? (
-          <div className="mt-16 flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-white py-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="mt-16 flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-white py-16 text-center"
+          >
             <SearchX className="h-10 w-10 text-slate-300" strokeWidth={1.5} />
             <p className="mt-4 text-base font-medium text-slate-700">
               هیچ محصولی یافت نشد.
@@ -104,20 +175,30 @@ export default function Home() {
             <p className="text-sm text-slate-400">
               سعی کنید با عبارت دیگری جستجو کنید.
             </p>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setSearchQuery("")}
               className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#152238] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
             >
               نمایش همه محصولات
               <ArrowLeft className="h-4 w-4" />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         ) : (
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          >
             {displayProducts.map((product) => (
-              <div
+              <motion.div
                 key={product.id}
-                className="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white transition-shadow duration-200 hover:shadow-md"
+                variants={cardVariants}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                className="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white transition-shadow duration-200 hover:shadow-lg"
               >
                 {/* Image */}
                 <div className="relative overflow-hidden bg-slate-100">
@@ -153,22 +234,33 @@ export default function Home() {
                       <ArrowLeft className="mr-1 h-4 w-4" />
                     </Link>
 
-                    <Link
-                      href={`/product/${product.id}`}
-                      className="rounded-md bg-[#152238] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      خرید
-                    </Link>
+                      <Link
+                        href={`/product/${product.id}`}
+                        className="rounded-md bg-[#152238] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+                      >
+                        خرید
+                      </Link>
+                    </motion.div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
 
-      {/* Footer */}
-      <footer className="mt-16 border-t border-slate-200 bg-[#152238]">
+      {/* Footer with entrance */}
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-16 border-t border-slate-200 bg-[#152238]"
+      >
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-right">
             <div>
@@ -178,18 +270,192 @@ export default function Home() {
               </p>
             </div>
             <div className="flex gap-6 text-sm text-slate-300">
-              <Link href="/" className="hover:text-white">خانه</Link>
-              <Link href="/products" className="hover:text-white">محصولات</Link>
-              <Link href="/contact" className="hover:text-white">تماس با ما</Link>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link href="/" className="hover:text-white">خانه</Link>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link href="/products" className="hover:text-white">محصولات</Link>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link href="/contact" className="hover:text-white">تماس با ما</Link>
+              </motion.div>
             </div>
           </div>
           <div className="mt-8 border-t border-white/10 pt-6 text-center text-xs text-slate-400">
             © ۲۰۲۶ نام برند — تمامی حقوق محفوظ است
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </main>
   );
+  // return (
+  //   <main className="min-h-screen bg-[#FAFAF9]">
+  //     {/* Hero Section */}
+  //     <section className="relative bg-[#152238] px-4 py-16 sm:py-20 lg:py-24">
+  //       <div className="relative mx-auto max-w-4xl text-center">
+  //         <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+  //           نام برند
+  //         </h1>
+  //         <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+  //           محصولات منتخب، کیفیت تضمین‌شده و ارسال سریع به سراسر ایران.
+  //         </p>
+  //         <a
+  //           href="#products"
+  //           className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#C9A25D] px-6 py-3 text-sm font-semibold text-[#152238] transition-colors hover:bg-[#d4b374]"
+  //         >
+  //           مشاهده محصولات
+  //           <ArrowLeft className="h-4 w-4" />
+  //         </a>
+  //       </div>
+  //     </section>
+
+  //     {/* Trust Bar */}
+  //     <div className="border-b border-slate-200 bg-white">
+  //       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-3">
+  //         <div className="flex items-center justify-center gap-2.5 text-slate-600">
+  //           <Truck className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+  //           <span className="text-sm">ارسال سریع به سراسر ایران</span>
+  //         </div>
+  //         <div className="flex items-center justify-center gap-2.5 text-slate-600">
+  //           <ShieldCheck className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+  //           <span className="text-sm">پرداخت امن</span>
+  //         </div>
+  //         <div className="flex items-center justify-center gap-2.5 text-slate-600">
+  //           <RotateCcw className="h-5 w-5 text-[#152238]" strokeWidth={1.75} />
+  //           <span className="text-sm">ضمانت بازگشت کالا</span>
+  //         </div>
+  //       </div>
+  //     </div>
+
+  //     {/* Search & Products */}
+  //     <div id="products" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+  //       {/* Search Bar */}
+  //       <div className="mx-auto max-w-2xl relative z-10">
+  //         <div className="rounded-lg bg-white p-1.5 shadow-md ring-1 ring-slate-200">
+  //           <div className="relative">
+  //             <Search className="absolute right-3.5 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-slate-400" />
+  //             <input
+  //               type="text"
+  //               placeholder="جستجوی محصولات ..."
+  //               value={searchQuery}
+  //               onChange={(e) => setSearchQuery(e.target.value)}
+  //               className="w-full rounded-md border-0 bg-transparent py-3 pr-11 pl-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#152238]/15"
+  //               dir="rtl"
+  //             />
+  //             {searchQuery && (
+  //               <button
+  //                 onClick={() => setSearchQuery("")}
+  //                 className="absolute left-3.5 top-1/2 -translate-y-1/2 rounded p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600"
+  //                 aria-label="پاک کردن جستجو"
+  //               >
+  //                 ✕
+  //               </button>
+  //             )}
+  //           </div>
+  //         </div>
+  //         {searchQuery && (
+  //           <p className="mt-2.5 text-center text-sm text-slate-500">
+  //             {displayProducts.length} نتیجه برای «{searchQuery}»
+  //           </p>
+  //         )}
+  //       </div>
+
+  //       {/* Product Grid */}
+  //       {displayProducts.length === 0 ? (
+  //         <div className="mt-16 flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-white py-16 text-center">
+  //           <SearchX className="h-10 w-10 text-slate-300" strokeWidth={1.5} />
+  //           <p className="mt-4 text-base font-medium text-slate-700">
+  //             هیچ محصولی یافت نشد.
+  //           </p>
+  //           <p className="text-sm text-slate-400">
+  //             سعی کنید با عبارت دیگری جستجو کنید.
+  //           </p>
+  //           <button
+  //             onClick={() => setSearchQuery("")}
+  //             className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#152238] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+  //           >
+  //             نمایش همه محصولات
+  //             <ArrowLeft className="h-4 w-4" />
+  //           </button>
+  //         </div>
+  //       ) : (
+  //         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+  //           {displayProducts.map((product) => (
+  //             <div
+  //               key={product.id}
+  //               className="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white transition-shadow duration-200 hover:shadow-md"
+  //             >
+  //               {/* Image */}
+  //               <div className="relative overflow-hidden bg-slate-100">
+  //                 <Image
+  //                   src={product.image || "/placeholder.svg"}
+  //                   alt={product.name}
+  //                   width={400}
+  //                   height={300}
+  //                   className="h-60 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+  //                 />
+  //                 {product.isNew && (
+  //                   <span className="absolute right-3 top-3 rounded bg-white/95 px-2.5 py-1 text-[11px] font-medium tracking-wide text-slate-700 ring-1 ring-slate-200">
+  //                     جدید
+  //                   </span>
+  //                 )}
+  //               </div>
+
+  //               {/* Content */}
+  //               <div className="flex flex-1 flex-col p-4">
+  //                 <h3 className="text-sm font-medium text-slate-800 line-clamp-1">
+  //                   {product.name}
+  //                 </h3>
+  //                 <p className="mt-1.5 text-base font-semibold text-[#152238]">
+  //                   {product.price.toLocaleString()} تومان
+  //                 </p>
+
+  //                 <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
+  //                   <Link
+  //                     href={`/product/${product.id}`}
+  //                     className="inline-flex items-center text-sm text-slate-600 transition-colors hover:text-[#152238]"
+  //                   >
+  //                     مشاهده جزئیات
+  //                     <ArrowLeft className="mr-1 h-4 w-4" />
+  //                   </Link>
+
+  //                   <Link
+  //                     href={`/product/${product.id}`}
+  //                     className="rounded-md bg-[#152238] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#1d2d47]"
+  //                   >
+  //                     خرید
+  //                   </Link>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //           ))}
+  //         </div>
+  //       )}
+  //     </div>
+
+  //     {/* Footer */}
+  //     <footer className="mt-16 border-t border-slate-200 bg-[#152238]">
+  //       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+  //         <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-right">
+  //           <div>
+  //             <p className="text-lg font-bold text-white">نام برند</p>
+  //             <p className="mt-1 text-sm text-slate-400">
+  //               ارسال به سراسر ایران — پاسخگویی ۷ روز هفته
+  //             </p>
+  //           </div>
+  //           <div className="flex gap-6 text-sm text-slate-300">
+  //             <Link href="/" className="hover:text-white">خانه</Link>
+  //             <Link href="/products" className="hover:text-white">محصولات</Link>
+  //             <Link href="/contact" className="hover:text-white">تماس با ما</Link>
+  //           </div>
+  //         </div>
+  //         <div className="mt-8 border-t border-white/10 pt-6 text-center text-xs text-slate-400">
+  //           © ۲۰۲۶ نام برند — تمامی حقوق محفوظ است
+  //         </div>
+  //       </div>
+  //     </footer>
+  //   </main>
+  // );
 }
 
 
