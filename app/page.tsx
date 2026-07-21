@@ -29,7 +29,7 @@ export const themes = {
     "--color-button-text": "#FBC6D8",
     "--color-button-hover": "#1D2D47",
 
-    "--color-price": "#FBC6D8",
+    "--color-price": "#291e22",
     "--color-footer-bg": "#FBC6D8",
     "--color-footer-text": "#222",
     "--color-icon": "#FBC6D8",
